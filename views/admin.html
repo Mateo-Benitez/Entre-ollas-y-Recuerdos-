@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel · Entre ollas y recuerdos</title>
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/panel/admin.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <img src="/img/logo.svg" alt="" id="sideLogo">
+        <div><strong id="sideName">Entre ollas y recuerdos</strong><small>Panel de administración</small></div>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="#/inicio" data-route="inicio"><span>🏠</span>Inicio</a>
+        <a href="#/menu" data-route="menu"><span>📅</span>Menú semanal</a>
+        <a href="#/viandas" data-route="viandas"><span>🍲</span>Viandas</a>
+        <a href="#/categorias" data-route="categorias"><span>🏷️</span>Categorías</a>
+        <a href="#/pedidos" data-route="pedidos"><span>🧾</span>Pedidos</a>
+        <a href="#/config" data-route="config"><span>⚙️</span>Configuración</a>
+        <a href="#/cuenta" data-route="cuenta"><span>👤</span>Cuenta</a>
+      </nav>
+      <div class="sidebar__foot">
+        <a class="btn btn--ghost btn--sm" href="/" target="_blank" rel="noopener">Ver tienda ↗</a>
+        <button class="btn btn--ghost btn--sm" id="logoutBtn" type="button">Salir</button>
+      </div>
+    </aside>
+
+    <main class="main" id="main" tabindex="-1">
+      <div class="loading">Cargando…</div>
+    </main>
+  </div>
+
+  <!-- Navegación inferior (celular) -->
+  <nav class="tabbar" id="tabbar">
+    <a href="#/inicio" data-route="inicio"><span>🏠</span>Inicio</a>
+    <a href="#/menu" data-route="menu"><span>📅</span>Menú</a>
+    <a href="#/viandas" data-route="viandas"><span>🍲</span>Viandas</a>
+    <a href="#/pedidos" data-route="pedidos"><span>🧾</span>Pedidos</a>
+    <button type="button" id="moreBtn"><span>☰</span>Más</button>
+  </nav>
+  <div class="more-menu" id="moreMenu" hidden>
+    <a href="#/categorias"><span>🏷️</span>Categorías</a>
+    <a href="#/config"><span>⚙️</span>Configuración</a>
+    <a href="#/cuenta"><span>👤</span>Cuenta</a>
+    <a href="/" target="_blank" rel="noopener"><span>↗</span>Ver tienda</a>
+  </div>
+
+  <dialog class="modal" id="modal">
+    <form method="dialog" class="modal__box" id="modalForm" novalidate>
+      <header class="modal__head">
+        <h2 id="modalTitle"></h2>
+        <button type="button" class="icon-btn" data-modal-close aria-label="Cerrar">✕</button>
+      </header>
+      <div class="modal__body" id="modalBody"></div>
+      <p class="alert alert--error modal__err" id="modalErr" hidden></p>
+      <footer class="modal__foot" id="modalFoot"></footer>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/panel/admin.js" type="module"></script>
+</body>
+</html>
